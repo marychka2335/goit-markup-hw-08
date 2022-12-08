@@ -105,6 +105,7 @@ img {
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
+    padding: 0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -282,9 +283,9 @@ img {
 }
 
 .contact__list {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -295,8 +296,6 @@ img {
   -webkit-transition-timing-function: var(--trans-timing);
           transition-timing-function: var(--trans-timing);
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-color);
   display: -webkit-box;
@@ -305,11 +304,18 @@ img {
 }
 @media screen and (min-width: 768px) {
   .contact__list {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-right: 0;
+    font-size: 12px;
+    line-height: 1.1666666667;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -318,6 +324,8 @@ img {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    font-size: 14px;
+    line-height: 1.14;
   }
   .contact__list .contact__item:not(:last-child) {
     margin-right: 50px;
@@ -335,7 +343,8 @@ img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-left: auto;
+    margin-left: 0;
+    padding: 21px 0;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -350,9 +359,6 @@ img {
   }
 }
 
-.contact__link {
-  padding: 32px 0;
-}
 .contact__link:active {
   color: var(--active-color);
 }
@@ -360,9 +366,14 @@ img {
   color: var(--active-color);
   fill: currentColor;
 }
+@media screen and (min-width: 1200px) {
+  .contact__link:hover, .contact__link:focus {
+    padding: 32px 0;
+  }
+}
 
 .contact__item-icons {
-  margin-right: 10px;
+  margin-right: 0px;
   fill: var(--second-color);
   -webkit-transition-property: fill;
   transition-property: fill;
@@ -371,13 +382,28 @@ img {
   -webkit-transition-timing-function: var(--trans-timing);
           transition-timing-function: var(--trans-timing);
 }
+@media screen and (min-width: 768px) {
+  .contact__item-icons:not(:last-child) {
+    padding-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__item-icons {
+    margin-right: 10px;
+  }
+}
 .contact__item-icons:hover, .contact__item-icons:focus {
   color: var(--active-color);
   fill: currentColor;
 }
 
 .contact__icon {
-  margin-right: 10px;
+  margin-right: 8px;
+}
+@media screen and (min-width: 1200px) {
+  .contact__icon {
+    margin-right: 10px;
+  }
 }
 
 .logo {
@@ -387,7 +413,13 @@ img {
   line-height: 1.1666666667;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #2196F3;
+  color: var(--active-color);
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 24px;
+    line-height: 1.1666666667;
+  }
 }
 @media screen and (min-width: 1200px) {
   .logo {
@@ -439,6 +471,7 @@ img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-right: 96px;
   }
 }
 
@@ -482,8 +515,13 @@ img {
   border-radius: 2px;
   background-color: var(--active-color);
   position: absolute;
-  bottom: -1px;
+  bottom: -4px;
   left: 0;
+}
+@media screen and (min-width: 1200px) {
+  .nav__link--current::after {
+    bottom: -1px;
+  }
 }
 .nav__link:hover, .nav__link:focus {
   color: var(--active-color);
@@ -1091,7 +1129,22 @@ h1 {
   padding: 63px 24px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1199px) {
+  .footer__container {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+}
+@media screen and (min-width: 1200px) {
   .footer__container {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -1,6 +1,15 @@
 .footer__container {
 
-@media screen and (min-width: 768px) {
+  @media screen and (max-width: 1199px) {
+text-align: center;  }
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  
+  display: flex;
+  align-items: baseline;
+}
+
+@media screen and (min-width: 1200px) {
   display: flex;
   align-items: baseline;
 }
@@ -9,6 +18,7 @@
 .footer__contacts {
   text-align: center;
   margin-bottom: 60px;
+  
 
   @media screen and (min-width: 768px) {
     text-align: left;
